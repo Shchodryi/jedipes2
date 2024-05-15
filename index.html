@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .video-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .video-section video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-section .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            text-align: center;
+            font-size: 3em;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .video-section .scroll-arrow {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: white;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(25% - 10px);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.15);
+        }
+        .tabs {
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            padding: 20px 30px;
+            cursor: pointer;
+            border: none;
+            background: #f0f0f0;
+            margin: 0 5px;
+            transition: background 0.3s ease;
+            font-size: 16px;
+        }
+        .tabs button.active, .tabs button:hover {
+            background: #ddd;
+        }
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .footer a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .footer p {
+            margin: 10px 0;
+        }
+        /* Fullscreen image viewer */
+        .fullscreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .fullscreen img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .fullscreen .close, .fullscreen .prev, .fullscreen .next {
+            position: absolute;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        .fullscreen .close {
+            top: 20px;
+            right: 30px;
+        }
+        .fullscreen .prev {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .fullscreen .next {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="video-section">
+        <video src="15921892-uhd_3840_2160_50fps-2.mp4" autoplay muted loop></video>
+        <div class="text-overlay">ДЖЕДІ ПЕС</div>
+        <div class="scroll-arrow">↓</div>
+    </div>
+
+    <div id="about" class="section">
+        <h2>About</h2>
+        <p>Jack Russell Terriers are known for their high energy and lively personality. They are intelligent, fearless, and have a strong hunting instinct, making them excellent working dogs. They are also known for their boundless enthusiasm and require regular physical and mental stimulation to stay happy and healthy.</p>
+    </div>
+
+    <div id="gallery" class="section">
+        <h2>Gallery</h2>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="all">At home</button>
+            <button class="tab-btn" data-tab="work">At Work</button>
+            <button class="tab-btn" data-tab="walk">At Walk</button>
+        </div>
+        <div class="gallery">
+            <!-- All -->
+            <div class="gallery-tab all">
+                <img src="/Users/volodimirsodrij/Documents/DALL·E 2024-05-15 10.24.24 - A detailed and dynamic scene showing a Jack Russell Terrier in a park setting during autumn. The dog is mid-action, leaping to catch a frisbee. It has.jpeg" alt="Image 1">
+                <img src="/Users/volodimirsodrij/Documents/DALL·E 2024-05-15 14.12.14 - Two Jack Russell Terriers playing with a ball in a sunlit park. The scene captures one dog energetically chasing a bright green ball across a patch of.jpeg" alt="Image 2">
+                <img src="/Users/volodimirsodrij/Documents/DALL·E 2024-05-15 10.24.24 - A detailed and dynamic scene showing a Jack Russell Terrier in a park setting during autumn. The dog is mid-action, leaping to catch a frisbee. It has.jpeg" alt="Image 3">
+                <img src="/Users/volodimirsodrij/Documents/DALL·E 2024-05-15 14.12.18 - Two Jack Russell Terriers playing with a ball in a sunlit park. The scene captures one dog energetically chasing a bright green ball across a patch of.jpeg" alt="Image 4">
+                <!-- Second row of images for 'All' tab -->
+                <img src="/Users/volodimirsodrij/Documents/DALL·E 2024-05-15 10.24.24 - A detailed and dynamic scene showing a Jack Russell Terrier in a park setting during autumn. The dog is mid-action, leaping to catch a frisbee. It has.jpeg" alt="Image 5">
+                <img src="/Users/volodimirsodrij/Documents/DALL·E 2024-05-15 10.24.26 - A detailed and dynamic scene showing a Jack Russell Terrier in a park setting during autumn. The dog is mid-action, leaping to catch a frisbee. It has.jpeg" alt="Image 6">
+                <img src="/Users/volodimirsodrij/Documents/DALL·E 2024-05-15 10.24.24 - A detailed and dynamic scene showing a Jack Russell Terrier in a park setting during autumn. The dog is mid-action, leaping to catch a frisbee. It has.jpeg" alt="Image 7">
+                <img src="/Users/volodimirsodrij/Documents/DALL·E 2024-05-15 10.24.24 - A detailed and dynamic scene showing a Jack Russell Terrier in a park setting during autumn. The dog is mid-action, leaping to catch a frisbee. It has.jpeg" alt="Image 8">
+            </div>
+            <!-- At Work -->
+            <div class="gallery-tab work" style="display:none;">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 1">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 2">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 3">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 4">
+                <!-- Second row of images for 'Work' tab -->
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 5">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 6">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 7">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 8">
+            </div>
+            <!-- At Walk -->
+            <div class="gallery-tab walk" style="display:none;">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 1">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 2">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 3">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 4">
+                <!-- Second row of images for 'Walk' tab -->
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 5">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 6">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 7">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 8">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Follow us on:</p>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://tiktok.com" target="_blank">TikTok</a>
+        <p>&copy; 2024 Your Website</p>
+    </div>
+
+    <!-- Fullscreen image viewer -->
+    <div class="fullscreen">
+        <span class="close">&times;</span>
+        <span class="prev">&#10094;</span>
+        <img src="" alt="Fullscreen Image">
+        <span class="next">&#10095;</span>
+    </div>
+
+    <script>
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const galleryTabs = document.querySelectorAll('.gallery-tab');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const tab = button.getAttribute('data-tab');
+                galleryTabs.forEach(tabContent => {
+                    if (tabContent.classList.contains(tab)) {
+                        tabContent.style.display = 'flex';
+                        tabContent.style.flexWrap = 'wrap';
+                    } else {
+                        tabContent.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Fullscreen image viewer
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const fullscreen = document.querySelector('.fullscreen');
+        const fullscreenImg = fullscreen.querySelector('img');
+        const closeBtn = fullscreen.querySelector('.close');
+        const prevBtn = fullscreen.querySelector('.prev');
+        const nextBtn = fullscreen.querySelector('.next');
+
+        let currentImgIndex;
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImgIndex = index;
+                openFullscreen(img.src);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeFullscreen);
+        fullscreen.addEventListener('click', (event) => {
+            if (event.target === fullscreen) {
+                closeFullscreen();
+            }
+        });
+        prevBtn.addEventListener('click', showPrevImage);
+        nextBtn.addEventListener('click', showNextImage);
+
+        function openFullscreen(src) {
+            fullscreenImg.src = src;
+            fullscreen.style.display = 'flex';
+        }
+
+        function closeFullscreen() {
+            fullscreen.style.display = 'none';
+        }
+
+        function showPrevImage() {
+            currentImgIndex = (currentImgIndex - 1 + galleryImages.length) % galleryImages.length;
+            fullscreenImg.src = galleryImages[currentImgIndex].src;
+        }
+
+        function showNextImage() {
+            currentImgIndex = (currentImgIndex + 1) % galleryImages.length;
+            fullscreenImg.src = galleryImages[currentImgIndex].src;
+        }
+
+        // Intersection Observer for section animations
+        const sections = document.querySelectorAll('.section');
+        const options = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
