@@ -10,7 +10,11 @@
             padding: 0;
             font-family: Arial, sans-serif;
             scroll-behavior: smooth;
+            background: url('') no-repeat center center fixed;
+            background-size: cover;
         }
+
+        /* Video Section */
         .video-section {
             position: relative;
             width: 100%;
@@ -53,6 +57,8 @@
                 transform: translateX(-50%) translateY(-5px);
             }
         }
+
+        /* Section Styles */
         .section {
             padding: 60px 20px;
             text-align: center;
@@ -64,6 +70,8 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Gallery Styles */
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -78,6 +86,8 @@
         .gallery img:hover {
             transform: scale(1.15);
         }
+
+        /* Tabs Styles */
         .tabs {
             margin-bottom: 20px;
         }
@@ -93,6 +103,8 @@
         .tabs button.active, .tabs button:hover {
             background: #ddd;
         }
+
+        /* Footer Styles */
         .footer {
             background: #333;
             color: white;
@@ -110,7 +122,8 @@
         .footer p {
             margin: 10px 0;
         }
-        /* Fullscreen image viewer */
+
+        /* Fullscreen Image Viewer */
         .fullscreen {
             display: none;
             position: fixed;
@@ -146,67 +159,112 @@
             top: 50%;
             transform: translateY(-50%);
         }
+
+        /* New Block Styles */
+        .image-description-block {
+            display: flex;
+            align-items: center;
+            padding: 60px 20px;
+            text-align: left;
+            gap: 20px;
+        }
+        .image-description-block img {
+            width: 40%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .image-description-block .description {
+            flex: 1;
+            font-size: 1.2em;
+        }
+
+        .image-description-block.reverse {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
     </style>
 </head>
 <body>
+    <!-- Video Section -->
     <div class="video-section">
-        <video src="jedi2.mp4" autoplay muted loop></video>
+        <video src="/Users/volodimirsodrij/Documents/jedi2.mp4" autoplay muted loop></video>
         <div class="text-overlay">ДЖЕДІ ПЕС</div>
         <div class="scroll-arrow">↓</div>
     </div>
 
+    <!-- About Section -->
     <div id="about" class="section">
-        <h2>About</h2>
-        <p>Jack Russell Terriers are known for their high energy and lively personality. They are intelligent, fearless, and have a strong hunting instinct, making them excellent working dogs. They are also known for their boundless enthusiasm and require regular physical and mental stimulation to stay happy and healthy.</p>
+        <h2></h2>
+        <p>"Джедік — це маленький комедійний вихор енергії, який виглядає як батарейка, що ніколи не розряджається. Уявіть собі маленького гіперактивного клоуна, який може годинами бігати, грати і копати ямки в пошуках скарбів, яких там насправді немає. Він як маленький дослідник, який ніколи не стоїть на місці і постійно шукає нові пригоди. Він може здаватися мініатюрним акробатом, стрибати з меблів на меблі, як якби у нього були приховані пружини в лапах. Цей пес завжди готовий до гри, і якщо ви кинете м'яч, будьте впевнені, що він принесе його вам з такою швидкістю, наче він влаштовує забіг на Олімпійських іграх."</p>
     </div>
 
+    <!-- First Image Description Block -->
+    <div class="image-description-block">
+        <img src="/Users/volodimirsodrij/Documents/DALL·E 2024-05-15 10.24.24 - A detailed and dynamic scene showing a Jack Russell Terrier in a park setting during autumn. The dog is mid-action, leaping to catch a frisbee. It has.jpeg" alt="Description Image">
+        <div class="description">
+            <h2>Image Title 1</h2>
+            <p>This is the description of the image. It provides additional context and information about what is depicted in the image. Jack Russell Terriers are not only energetic and lively but also extremely loyal and affectionate towards their owners.</p>
+        </div>
+    </div>
+
+    <!-- Second Image Description Block -->
+    <div class="image-description-block reverse">
+        <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Description Image">
+        <div class="description">
+            <h2>Image Title 2</h2>
+            <p>This is the description of the second image. It provides additional context and information about what is depicted in the image. Jack Russell Terriers are known for their agility and playful nature, making them great companions for active families.</p>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
     <div id="gallery" class="section">
-        <h2>Gallery</h2>
+        <h2>Більше фото</h2>
         <div class="tabs">
-            <button class="tab-btn active" data-tab="all">At home</button>
-            <button class="tab-btn" data-tab="work">At Work</button>
-            <button class="tab-btn" data-tab="walk">At Walk</button>
+            <button class="tab-btn active" data-tab="all">Дома</button>
+            <button class="tab-btn" data-tab="work">На кроботі</button>
+            <button class="tab-btn" data-tab="walk">На прогулянці</button>
         </div>
         <div class="gallery">
             <!-- All -->
             <div class="gallery-tab all">
-                <img src="photo_2024-05-16_11-56-24.jpg" alt="Image 1">
-                <img src="photo_2024-05-16_11-56-27.jpg" alt="Image 2">
-                <img src="photo_2024-05-16_11-56-30.jpg" alt="Image 3">
-                <img src="photo_2024-05-16_11-56-33.jpg" alt="Image 4">
+                <img src="/Users/volodimirsodrij/Documents/1.jpg" alt="Image 1">
+                <img src="/Users/volodimirsodrij/Documents/2.jpg" alt="Image 2">
+                <img src="/Users/volodimirsodrij/Documents/3.jpg" alt="Image 3">
+                <img src="/Users/volodimirsodrij/Documents/4.jpg" alt="Image 4">
                 <!-- Second row of images for 'All' tab -->
-                <img src="photo_2024-05-16_11-56-36.jpg" alt="Image 5">
-                <img src="photo_2024-05-16_11-56-39.jpg" alt="Image 6">
-                <img src="PXL_20220414_052138875.jpg" alt="Image 7">
-                <img src="photo_2024-05-16_11-56-41.jpg" alt="Image 8">
+                <img src="/Users/volodimirsodrij/Documents/5.jpg" alt="Image 5">
+                <img src="/Users/volodimirsodrij/Documents/6.jpg" alt="Image 6">
+                <img src="/Users/volodimirsodrij/Documents/7.jpg" alt="Image 7">
+                <img src="/Users/volodimirsodrij/Documents/1.jpg" alt="Image 8">
             </div>
             <!-- At Work -->
             <div class="gallery-tab work" style="display:none;">
-                <img src="05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 1">
-                <img src="05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 2">
-                <img src="05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 3">
-                <img src="05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 4">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 1">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 2">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 3">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 4">
                 <!-- Second row of images for 'Work' tab -->
-                <img src="05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 5">
-                <img src="05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 6">
-                <img src="05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 7">
-                <img src="05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 8">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 5">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 6">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 7">
+                <img src="/Users/volodimirsodrij/Documents/05389aca-4cf7-4ef3-ba4a-e06a8e33771a.jpeg" alt="Work Image 8">
             </div>
             <!-- At Walk -->
             <div class="gallery-tab walk" style="display:none;">
-                <img src="PXL_20220414_052138875.jpg" alt="Walk Image 1">
-                <img src="PXL_20220414_052138875.jpg" alt="Walk Image 2">
-                <img src="PXL_20220414_052138875.jpg" alt="Walk Image 3">
-                <img src="PXL_20220414_052138875.jpg" alt="Walk Image 4">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 1">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 2">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 3">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 4">
                 <!-- Second row of images for 'Walk' tab -->
-                <img src="PXL_20220414_052138875.jpg" alt="Walk Image 5">
-                <img src="PXL_20220414_052138875.jpg" alt="Walk Image 6">
-                <img src="PXL_20220414_052138875.jpg" alt="Walk Image 7">
-                <img src="PXL_20220414_052138875.jpg" alt="Walk Image 8">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 5">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 6">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 7">
+                <img src="/Users/volodimirsodrij/Documents/PXL_20220414_052138875.jpg" alt="Walk Image 8">
             </div>
         </div>
     </div>
 
+    <!-- Footer Section -->
     <div class="footer">
         <p>Follow us on:</p>
         <a href="https://instagram.com" target="_blank">Instagram</a>
@@ -215,7 +273,7 @@
         <p>&copy; 2024 Your Website</p>
     </div>
 
-    <!-- Fullscreen image viewer -->
+    <!-- Fullscreen Image Viewer -->
     <div class="fullscreen">
         <span class="close">&times;</span>
         <span class="prev">&#10094;</span>
